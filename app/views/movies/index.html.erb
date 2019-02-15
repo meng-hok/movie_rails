@@ -1,0 +1,76 @@
+<style>
+    #div_img{
+        float : left;
+    }
+    #div_img img{
+        float : center;
+        height : 55%;
+        width : 55%;
+      
+    }
+</style>
+     <%
+=begin%>
+ <%= link_to  "Add new Movie", new_movie_path %> 
+<%
+=end%>
+
+    <h1> <%= pluralize(@arr2_movie.length, 'movie') %></h1>
+        
+         <ul>
+            <% @arr2_movie.each do |x| %>
+         
+             <div id="div_img" >
+   
+                <%=  image_for (x.image_file_name)  %>
+            </div>    
+          
+            <li>
+                 <%= x.id %>
+            </li>
+            <li>      
+                <%= link_to x.title, movie_path(x.id) %>
+            </li>
+            <li> 
+                (<%= x.rating %>) 
+            </li>
+            <li>   
+                <%= format_total_gross(x.total_gross) %>
+            </li>
+            <li>   
+               <%= truncate(x.description,length: 5 )%>
+            </li>
+            <li>   
+               <%=x.released_on%>
+            </li>
+             <li>   
+               <%=x.director%>
+            </li>    
+       
+            <br>
+            <br>
+            <% end %>
+        </ul>
+
+
+        <br>
+      
+
+<%
+=begin%>
+                    
+ <%= @html_v %> 
+               <%= @testing_loop %>   
+<%
+
+
+
+
+
+
+
+
+
+=end%>
+
+       

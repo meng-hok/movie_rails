@@ -1,0 +1,19 @@
+
+<ul>
+    <%
+=begin%>
+ <%=@main.html_safe%> 
+<%
+=end%>
+<div >
+   
+    <%=  image_for (@x.image_file_name) %>
+
+</div>    
+
+    <%=@sub.html_safe%>
+    
+</ul>
+<%= link_to  "ALL movies", movies_path %>
+<%= link_to  "Edit", edit_movie_path(@x.id ) %>
+<%= link_to  "Delete", movie_path(@x) ,method: :delete ,data: { confirm: 'Are you sure with this'} %>

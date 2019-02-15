@@ -1,0 +1,19 @@
+@import "variable";
+
+header{
+    padding: 5px;
+    color: #F0F0F0;
+    background: #008000;
+    text-align: center;
+ }
+
+ footer{
+     text-align: center;
+     padding: 5px; color: $primary-color;
+     background: #F0F0F0
+ }
+ aside{
+    float: right;
+    background: #F0F0F0; 
+    width: 200px;
+ }

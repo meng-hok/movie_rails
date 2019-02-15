@@ -1,0 +1,71 @@
+<%= form_for( @movie ) do |f| %>
+  <%
+=begin%>
+ <% if @movie.errors.any? %>
+<section id="errors">
+  <header>
+    <h2>
+      Oops! The <%= @movie.class.name.titleize.downcase %> could not be saved. 
+    </h2>
+    <h3>
+      Please correct the following <%= pluralize(@movie.errors.count, "error") %>:
+    </h3>
+  </header>
+  <ul>
+    <% @movie.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+</section>
+<% end %> 
+<%
+=end%>
+
+<% if @movie.errors.any? %>
+    <% @movie.errors.full_messages.each do |x|%>
+      <p><%= x %></p>
+    <% end %>  
+<% end %>  
+
+ <p>
+    <%= f.label :title  %>
+    <%= f.text_area :title , autofocus:true  %>
+  </p>  
+  <p>
+    <%= f.label :description  %>
+    <%= f.text_area :description  %>
+  </p>  
+     <p>
+    <%= f.label :rating  %>
+    <%= f.text_field :rating  %>
+  </p>  
+   <p>
+    <%= f.label :released_on  %>
+    <%= f.date_field :released_on  %>
+  </p>  
+    <p>
+    <%= f.label :total_gross  %>
+    <%= f.text_field :total_gross  %>
+  </p>  
+   <p>
+    <%= f.label :cast  %>
+    <%= f.text_field :cast  %>
+  </p>  
+    <p>
+    <%= f.label :director  %>
+    <%= f.text_field :director  %>
+  </p>  
+    <p>
+    <%= f.label :duration  %>
+    <%= f.text_field :duration  %>
+  </p>  
+    <p>
+    <%= f.label :image_file_name  %>
+    <%= f.text_field :image_file_name  %>
+  </p>  
+  <p> 
+    <%= f.submit  %>
+    <%= link_to  "cancel", movies_path %>
+  </p>
+  
+<% end %>
